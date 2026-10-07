@@ -125,39 +125,39 @@ AgriBirdHRMS/
 
 # 📸 Screenshots
 
-## 🌱 Splash Screen
+### 🌱 Splash Screen
 
-![Splash Screen](screenshots/splash-screen.jpeg)
-
----
-
-## 🔐 Login Screen
-
-![Login Screen](screenshots/login.jpeg)
+<img src="screenshots/splash-screen.jpeg" width="250">
 
 ---
 
-## 🏠 Home Dashboard
+### 🔐 Login Screen
 
-![Home Dashboard](screenshots/home-dashboard.jpeg)
-
----
-
-## ⏱️ Attendance
-
-![Attendance](screenshots/attendance.jpeg)
+<img src="screenshots/login.jpeg" width="250">
 
 ---
 
-## 🏖️ Apply Leave
+### 🏠 Home Dashboard
 
-![Apply Leave](screenshots/apply-leave.jpeg)
+<img src="screenshots/home-dashboard.jpeg" width="250">
 
 ---
 
-## 👤 Employee Profile
+### ⏱️ Attendance
 
-![Employee Profile](screenshots/profile.jpeg)
+<img src="screenshots/attendance.jpeg" width="250">
+
+---
+
+### 🏖️ Apply Leave
+
+<img src="screenshots/apply-leave.jpeg" width="250">
+
+---
+
+### 👤 Employee Profile
+
+<img src="screenshots/profile.jpeg" width="250">
 
 ---
 
