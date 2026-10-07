@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7F5">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="#F4F7F5"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:letterSpacing="0.2"
+            android:text="APPLY LEAVE"
+            android:textColor="#1A1A1A"
+            android:textSize="14sp"
+            android:textStyle="bold|normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ============================================= -->
+    <!-- ✅ FIX: NestedScrollView ने wrap केले -->
+    <!-- ============================================= -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewApplyLeave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="32dp" />
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#F4F7F5"-->
+<!--    android:fitsSystemWindows="true">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:paddingBottom="24dp"-->
+<!--        tools:context=".LeaveActivity">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtApplyLeave"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="Apply Leave"-->
+<!--            android:textColor="#0E3A1A"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtSubtitle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:text="Fill the details below to apply for leave"-->
+<!--            android:textColor="#666666"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintStart_toStartOf="@id/txtApplyLeave"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtApplyLeave" />-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgLogo"-->
+<!--            android:layout_width="100dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:src="@drawable/agri"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/viewDivider"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginHorizontal="20dp"-->
+<!--            android:background="#E0E6E1"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/txtSubtitle" />-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:id="@+id/mainCard"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:layout_marginHorizontal="16dp"-->
+<!--            app:cardCornerRadius="16dp"-->
+<!--            app:cardElevation="2dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/viewDivider">-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="16dp">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgLeaveLogo"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:srcCompat="@drawable/leave" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtLeaveApplication"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:text="Leave Application"-->
+<!--                    android:textColor="#0E3A1A"-->
+<!--                    android:textSize="22sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/imgLeaveLogo" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtSubmitRequest"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:text="Submit your leave request"-->
+<!--                    android:textColor="#666666"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/txtLeaveApplication" />-->
+
+<!--                <View-->
+<!--                    android:id="@+id/greenLine"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="3dp"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="#2E7D32"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/txtSubmitRequest" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icUser"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:src="@drawable/user"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/greenLine" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblUserType"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Employee Name *"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/icUser"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/icUser" />-->
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtUser"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@android:drawable/editbox_background_normal"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Auto Filled"-->
+<!--                    android:paddingHorizontal="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblUserType"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lblUserType" />-->
+<!--                &lt;!&ndash; ________________________________________________________ &ndash;&gt;-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icId"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:src="@drawable/id"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/edtUser" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblIdType"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Employee Id *"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/icId"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/icId" />-->
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtId"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@android:drawable/editbox_background_normal"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Auto Filled"-->
+<!--                    android:paddingHorizontal="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblIdType"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lblIdType" />-->
+
+<!--                &lt;!&ndash; ________________________________________________________ &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/icLeaveType"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/edtId"-->
+<!--                    app:srcCompat="@drawable/board" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblLeaveType"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Leave Type *"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/icLeaveType"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/icLeaveType" />-->
+
+<!--                <Spinner-->
+<!--                    android:id="@+id/spinnerLeaveType"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@android:drawable/btn_dropdown"-->
+<!--                    android:entries="@array/leave_types"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblLeaveType"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lblLeaveType" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icStartDate"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/spinnerLeaveType"-->
+<!--                    app:srcCompat="@drawable/calendar" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblStartDate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Start Date *"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/icStartDate"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/icStartDate" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtStartDate"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@android:drawable/editbox_background_normal"-->
+<!--                    android:clickable="true"-->
+<!--                    android:drawableEnd="@android:drawable/ic_menu_my_calendar"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Select Start Date"-->
+<!--                    android:paddingHorizontal="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblStartDate"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lblStartDate" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icEndDate"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:src="@drawable/calendar"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/edtStartDate" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblEndDate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="End Date *"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/icEndDate"-->
+<!--                    app:layout_constraintTop_toTopOf="@id/icEndDate" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/editEndDate"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@android:drawable/editbox_background_normal"-->
+<!--                    android:clickable="true"-->
+<!--                    android:drawableEnd="@android:drawable/ic_menu_my_calendar"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Select End Date"-->
+<!--                    android:paddingHorizontal="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblEndDate"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/lblEndDate" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/icReason"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/editEndDate"-->
+<!--                    app:srcCompat="@drawable/page" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/lblReason"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Reason *"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="15dp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/icReason"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/icReason" />-->
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/edtReason"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="120dp"-->
+<!--                    android:layout_marginTop="6dp"-->
+<!--                    android:background="@drawable/editbox_bg"-->
+<!--                    android:gravity="top|start"-->
+<!--                    android:hint="Enter reason for leave..."-->
+<!--                    android:inputType="textMultiLine"-->
+<!--                    android:lines="4"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:scrollbars="vertical"-->
+<!--                    android:textColor="@android:color/black"-->
+<!--                    android:textColorHint="#999999"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="@+id/lblReason"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/lblReason" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnSubmitLeave"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="50dp"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:backgroundTint="#2E7D32"-->
+<!--                    android:text="SUBMIT LEAVE REQUEST"-->
+<!--                    android:textColor="@android:color/white"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/edtReason" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtFooter"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:letterSpacing="0.05"-->
+<!--            android:text="© 2026 AgriBird.All Rights Reserved"-->
+<!--            android:textColor="#829684"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/mainCard" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/txtFooter2"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Property of AgriBird Services Pvt.Ltd"-->
+<!--            android:textSize="11sp"-->
+<!--            android:textColor="#A4B5A6"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:fontFamily="sans-serif-light"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtFooter"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->

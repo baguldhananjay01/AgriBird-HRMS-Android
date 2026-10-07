@@ -1,0 +1,1532 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dashboard_bg"
+    tools:context=".ui.dashboard.DashboardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardHeader"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120sdp"
+        android:background="@color/dashboard_bg"
+        android:elevation="@dimen/_2sdp"
+        android:paddingStart="@dimen/_16sdp"
+        android:paddingEnd="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmployeeProfileImage"
+            android:layout_width="@dimen/_64sdp"
+            android:layout_height="@dimen/_64sdp"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_32sdp"
+            app:cardElevation="@dimen/_3sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#E2E8F0"
+            app:strokeWidth="@dimen/_1sdp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgemployeeProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_3sdp"
+                android:contentDescription="Employee Profile Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/Greeting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Good Morning, 👋"
+            android:textColor="@color/dashboard_subtitle"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toStartOf="@id/imagemenu"
+            app:layout_constraintStart_toEndOf="@id/cardEmployeeProfileImage"
+            app:layout_constraintTop_toTopOf="@id/cardEmployeeProfileImage" />
+
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="SUMIT RAVINDRA SHELAR"
+            android:textColor="@color/dashboard_title"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/imagemenu"
+            app:layout_constraintStart_toEndOf="@id/cardEmployeeProfileImage"
+            app:layout_constraintTop_toBottomOf="@id/Greeting" />
+
+        <ImageView
+            android:id="@+id/imagemenu"
+            android:layout_width="@dimen/_48sdp"
+            android:layout_height="@dimen/_48sdp"
+            android:layout_marginTop="@dimen/_45sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Menu"
+            android:focusable="true"
+            android:padding="@dimen/_12sdp"
+            android:src="@drawable/menu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/dashboard_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/_4sdp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingEnd="@dimen/_4sdp"
+        android:paddingBottom="@dimen/_80sdp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardHeader">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="#F4F6F4"-->
+    <!--    android:fitsSystemWindows="true">-->
+
+    <!--    <ScrollView-->
+    <!--        android:id="@+id/scrollDashboard"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:background="#F4F7F5"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+
+    <!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:paddingBottom="24dp">-->
+
+    <!--            <com.google.android.material.card.MaterialCardView-->
+    <!--                android:id="@+id/cardHeader"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="70dp"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="0dp"-->
+    <!--                app:cardElevation="0dp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toTopOf="parent"-->
+    <!--                app:strokeColor="#E0E6E1"-->
+    <!--                app:strokeWidth="1dp">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageMenu"-->
+    <!--                        android:layout_width="35dp"-->
+    <!--                        android:layout_height="40dp"-->
+    <!--                        android:layout_marginStart="8dp"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:srcCompat="@drawable/menu" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageAgri"-->
+    <!--                        android:layout_width="120dp"-->
+    <!--                        android:layout_height="70dp"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintStart_toEndOf="@+id/imageMenu"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:srcCompat="@drawable/agri" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageBel"-->
+    <!--                        android:layout_width="30dp"-->
+    <!--                        android:layout_height="30dp"-->
+    <!--                        android:layout_marginEnd="8dp"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:srcCompat="@drawable/notification" />-->
+
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            </com.google.android.material.card.MaterialCardView>-->
+
+    <!--            <com.google.android.material.card.MaterialCardView-->
+    <!--                android:id="@+id/cardWelcome"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="150dp"-->
+    <!--                android:layout_marginStart="4dp"-->
+    <!--                android:layout_marginTop="8dp"-->
+    <!--                android:layout_marginEnd="4dp"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="20dp"-->
+    <!--                app:cardElevation="6dp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="0.0"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/cardHeader"-->
+    <!--                app:strokeColor="#E0E6E1"-->
+    <!--                app:strokeWidth="1dp">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent">-->
+
+    <!--                    <com.google.android.material.card.MaterialCardView-->
+    <!--                        android:id="@+id/profileCard"-->
+    <!--                        android:layout_width="72dp"-->
+    <!--                        android:layout_height="72dp"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:layout_marginTop="14dp"-->
+    <!--                        android:layout_marginBottom="16dp"-->
+
+    <!--                        android:clickable="true"-->
+    <!--                        android:focusable="true"-->
+    <!--                        android:foreground="?attr/selectableItemBackgroundBorderless"-->
+
+    <!--                        app:cardCornerRadius="36dp"-->
+    <!--                        app:cardElevation="3dp"-->
+    <!--                        app:strokeWidth="2dp"-->
+    <!--                        app:strokeColor="#2E7D32"-->
+
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:layout_constraintBottom_toBottomOf="parent">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imageProfile"-->
+    <!--                            android:layout_width="match_parent"-->
+    <!--                            android:layout_height="match_parent"-->
+    <!--                            android:scaleType="centerCrop"-->
+    <!--                            android:src="@drawable/man"/>-->
+
+    <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textWel"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginStart="16dp"-->
+    <!--                        android:layout_marginTop="24dp"-->
+    <!--                        android:text="👋 Welcome"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="16sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintStart_toEndOf="@+id/profileCard"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/txtEmployeeName"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="6dp"-->
+    <!--                        android:text=""-->
+    <!--                        android:textColor="#006400"-->
+    <!--                        android:textSize="22sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintStart_toStartOf="@+id/textWel"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/textWel" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/imageCAL"-->
+    <!--                        android:layout_width="26dp"-->
+    <!--                        android:layout_height="26dp"-->
+    <!--                        android:layout_marginTop="16dp"-->
+    <!--                        android:layout_marginEnd="16dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:srcCompat="@drawable/calendar"-->
+    <!--                        app:tint="#2E7D32" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textDate"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="6dp"-->
+    <!--                        android:layout_marginEnd="16dp"-->
+    <!--                        android:text="14 Jul 2026"-->
+    <!--                        android:textColor="@color/black"-->
+    <!--                        android:textSize="16sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/imageCAL" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/textDay"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="2dp"-->
+    <!--                        android:layout_marginEnd="16dp"-->
+    <!--                        android:text="Monday"-->
+    <!--                        android:textSize="13sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/textDate" />-->
+
+    <!--                    <com.google.android.material.card.MaterialCardView-->
+    <!--                        android:id="@+id/cardRole"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="32dp"-->
+    <!--                        android:layout_marginTop="15dp"-->
+    <!--                        app:cardBackgroundColor="#E8F5E9"-->
+    <!--                        app:cardCornerRadius="16dp"-->
+    <!--                        app:cardElevation="2dp"-->
+    <!--                        app:layout_constraintStart_toStartOf="@id/txtEmployeeName"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@id/txtEmployeeName">-->
+
+    <!--                        <LinearLayout-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="match_parent"-->
+    <!--                            android:gravity="center_vertical"-->
+    <!--                            android:orientation="horizontal"-->
+    <!--                            android:paddingStart="10dp"-->
+    <!--                            android:paddingEnd="10dp">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="18dp"-->
+    <!--                                android:layout_height="18dp"-->
+    <!--                                android:src="@drawable/user"-->
+    <!--                                app:tint="#2E7D32" />-->
+
+    <!--                            <TextView-->
+    <!--                                android:id="@+id/txtRole"-->
+    <!--                                android:layout_width="wrap_content"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:layout_marginStart="6dp"-->
+    <!--                                android:text="Administrator"-->
+    <!--                                android:textColor="#2E7D32"-->
+    <!--                                android:textSize="14sp"-->
+    <!--                                android:textStyle="bold" />-->
+    <!--                        </LinearLayout>-->
+    <!--                    </com.google.android.material.card.MaterialCardView>-->
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            </com.google.android.material.card.MaterialCardView>-->
+
+    <!--            <com.google.android.material.card.MaterialCardView-->
+    <!--                android:id="@+id/cardPresent"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="16dp"-->
+    <!--                android:layout_marginTop="16dp"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="14dp"-->
+    <!--                app:cardElevation="6dp"-->
+    <!--                app:layout_constraintEnd_toStartOf="@+id/cardPending"-->
+    <!--                app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/cardWelcome"-->
+    <!--                app:strokeColor="#E8F5E9"-->
+    <!--                app:strokeWidth="1dp">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:paddingHorizontal="8dp"-->
+    <!--                    android:paddingVertical="14dp">-->
+
+    <!--                    <com.google.android.material.card.MaterialCardView-->
+    <!--                        android:id="@+id/circleIconPresent"-->
+    <!--                        android:layout_width="44dp"-->
+    <!--                        android:layout_height="44dp"-->
+    <!--                        app:cardBackgroundColor="#E8F5E9"-->
+    <!--                        app:cardCornerRadius="22dp"-->
+    <!--                        app:cardElevation="0dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:strokeWidth="0dp">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="22dp"-->
+    <!--                            android:layout_height="22dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:src="@drawable/calendar"-->
+    <!--                            app:tint="#2E7D32" />-->
+    <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/txtCountPresent"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="8dp"-->
+    <!--                        android:text="24"-->
+    <!--                        android:textColor="#2E7D32"-->
+    <!--                        android:textSize="24sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/circleIconPresent" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/lblPresent"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="2dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="Present Today"-->
+    <!--                        android:textColor="#666666"-->
+    <!--                        android:textSize="11sp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/txtCountPresent" />-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="10dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/lblPresent">-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtViewDetailsPresent"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="View Details"-->
+    <!--                            android:textColor="#2E7D32"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="12dp"-->
+    <!--                            android:layout_height="12dp"-->
+    <!--                            android:layout_marginStart="4dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toEndOf="@+id/txtViewDetailsPresent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:tint="#2E7D32" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            </com.google.android.material.card.MaterialCardView>-->
+
+    <!--            <com.google.android.material.card.MaterialCardView-->
+    <!--                android:id="@+id/cardPending"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginHorizontal="8dp"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="14dp"-->
+    <!--                app:cardElevation="6dp"-->
+    <!--                app:layout_constraintEnd_toStartOf="@+id/cardEmployees"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/cardPresent"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/cardPresent"-->
+    <!--                app:strokeColor="#FFF3E0"-->
+    <!--                app:strokeWidth="1dp">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:paddingHorizontal="8dp"-->
+    <!--                    android:paddingVertical="14dp">-->
+
+    <!--                    <com.google.android.material.card.MaterialCardView-->
+    <!--                        android:id="@+id/circleIconPending"-->
+    <!--                        android:layout_width="44dp"-->
+    <!--                        android:layout_height="44dp"-->
+    <!--                        app:cardBackgroundColor="#FFF3E0"-->
+    <!--                        app:cardCornerRadius="22dp"-->
+    <!--                        app:cardElevation="0dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:strokeWidth="0dp">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="22dp"-->
+    <!--                            android:layout_height="22dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:src="@drawable/page"-->
+    <!--                            app:tint="#FF9800" />-->
+    <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/txtCountPending"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="8dp"-->
+    <!--                        android:text="3"-->
+    <!--                        android:textColor="#FF9800"-->
+    <!--                        android:textSize="24sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/circleIconPending" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/lblPending"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="2dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="Pending Leave"-->
+    <!--                        android:textColor="#666666"-->
+    <!--                        android:textSize="11sp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/txtCountPending" />-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="10dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/lblPending">-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtViewDetailsPending"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="View Details"-->
+    <!--                            android:textColor="#FF9800"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="12dp"-->
+    <!--                            android:layout_height="12dp"-->
+    <!--                            android:layout_marginStart="4dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toEndOf="@+id/txtViewDetailsPending"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:tint="#FF9800" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            </com.google.android.material.card.MaterialCardView>-->
+
+    <!--            <com.google.android.material.card.MaterialCardView-->
+    <!--                android:id="@+id/cardEmployees"-->
+    <!--                android:layout_width="0dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginEnd="16dp"-->
+    <!--                app:cardBackgroundColor="@color/white"-->
+    <!--                app:cardCornerRadius="14dp"-->
+    <!--                app:cardElevation="6dp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/cardPending"-->
+    <!--                app:layout_constraintTop_toTopOf="@+id/cardPresent"-->
+    <!--                app:strokeColor="#E3F2FD"-->
+    <!--                app:strokeWidth="1dp">-->
+
+    <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:paddingHorizontal="8dp"-->
+    <!--                    android:paddingVertical="14dp">-->
+
+    <!--                    <com.google.android.material.card.MaterialCardView-->
+    <!--                        android:id="@+id/circleIconEmployees"-->
+    <!--                        android:layout_width="44dp"-->
+    <!--                        android:layout_height="44dp"-->
+    <!--                        app:cardBackgroundColor="#E3F2FD"-->
+    <!--                        app:cardCornerRadius="22dp"-->
+    <!--                        app:cardElevation="0dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toTopOf="parent"-->
+    <!--                        app:strokeWidth="0dp">-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="22dp"-->
+    <!--                            android:layout_height="22dp"-->
+    <!--                            android:layout_gravity="center"-->
+    <!--                            android:src="@drawable/user"-->
+    <!--                            app:tint="#1976D2" />-->
+    <!--                    </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/txtCountEmployees"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="8dp"-->
+    <!--                        android:text="120"-->
+    <!--                        android:textColor="#1976D2"-->
+    <!--                        android:textSize="24sp"-->
+    <!--                        android:textStyle="bold"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/circleIconEmployees" />-->
+
+    <!--                    <TextView-->
+    <!--                        android:id="@+id/lblEmployees"-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="2dp"-->
+    <!--                        android:gravity="center"-->
+    <!--                        android:text="Total Employees"-->
+    <!--                        android:textColor="#666666"-->
+    <!--                        android:textSize="11sp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/txtCountEmployees" />-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_marginTop="10dp"-->
+    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+    <!--                        app:layout_constraintTop_toBottomOf="@+id/lblEmployees">-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtViewDetailsEmployees"-->
+    <!--                            android:layout_width="wrap_content"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:text="View Details"-->
+    <!--                            android:textColor="#1976D2"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <ImageView-->
+    <!--                            android:layout_width="12dp"-->
+    <!--                            android:layout_height="12dp"-->
+    <!--                            android:layout_marginStart="4dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintStart_toEndOf="@+id/txtViewDetailsEmployees"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent"-->
+    <!--                            app:tint="#1976D2" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--            </com.google.android.material.card.MaterialCardView>-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/txtViewDashboard"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="16dp"-->
+    <!--                android:layout_marginTop="24dp"-->
+    <!--                android:text="DASHBORD"-->
+    <!--                android:textColor="#2E7D32"-->
+    <!--                android:textSize="22sp"-->
+    <!--                android:textStyle="bold"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/cardPresent" />-->
+
+    <!--            <View-->
+    <!--                android:id="@+id/greenLine"-->
+    <!--                android:layout_width="80dp"-->
+    <!--                android:layout_height="4dp"-->
+    <!--                android:layout_marginTop="6dp"-->
+    <!--                android:background="@drawable/line_rounded"-->
+    <!--                app:layout_constraintStart_toStartOf="@+id/txtViewDashboard"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/txtViewDashboard" />-->
+
+    <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                android:id="@+id/layoutQuickActions"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="20dp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintStart_toStartOf="parent"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/greenLine">-->
+
+    <!--                <androidx.constraintlayout.widget.Group-->
+    <!--                    android:id="@+id/groupAdminCards"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    app:constraint_referenced_ids="cardEmployee,cardEmployeeList,cardAttendanceReport,cardEmployeeReport" />-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardEmployee"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@+id/cardEmployeeList"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackground"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="20dp"-->
+    <!--                                android:layout_height="20dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/user" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrow"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Employee"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrow"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackground"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/iconBackground" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="Register New"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrow"-->
+    <!--                            app:layout_constraintStart_toStartOf="@id/txtTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/txtTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardEmployeeList"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toEndOf="@+id/cardEmployee"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundList"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="24dp"-->
+    <!--                                android:layout_height="24dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/page" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowList"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/textView"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Employee List"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowList"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundList"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundList" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtSubtitleList"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="View &amp; Manage"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowList"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/textView"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardAttendanceReport"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@+id/cardEmployeeReport"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardEmployee">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundAttendance"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="28dp"-->
+    <!--                                android:layout_height="28dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/report" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowAttendance"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtAttendanceTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Attendance Report"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowAttendance"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundAttendance"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/iconBackgroundAttendance"/>-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtAttendanceSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="View Daily Reports"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowAttendance"-->
+    <!--                            app:layout_constraintStart_toStartOf="@id/txtAttendanceTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/txtAttendanceTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardEmployeeReport"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toEndOf="@+id/cardAttendanceReport"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardEmployee">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundEmpReport"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="28dp"-->
+    <!--                                android:layout_height="28dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/report" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowEmpReport"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtEmpReportTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Employee Report"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowEmpReport"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundEmpReport"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundEmpReport" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtEmpReportSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="View Detailed Report"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowEmpReport"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/txtEmpReportTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/txtEmpReportTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardAttendanceMain"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@+id/cardAttendanceHistory"-->
+    <!--                    app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardAttendanceReport">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundAttendanceMain"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="25dp"-->
+    <!--                                android:layout_height="20dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/attendant" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowAttendanceMain"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtAttendanceMainTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Attendance"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowAttendanceMain"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundAttendanceMain"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundAttendanceMain" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtAttendanceMainSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="Mark Attendance"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowAttendanceMain"-->
+    <!--                            app:layout_constraintStart_toStartOf="@id/txtAttendanceMainTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/txtAttendanceMainTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardAttendanceHistory"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toEndOf="@+id/cardAttendanceMain"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardAttendanceReport">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundHistory"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="24dp"-->
+    <!--                                android:layout_height="24dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/history" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowHistory"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtHistoryTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Attendance History"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowHistory"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundHistory"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundHistory" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtHistorySubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="View Past Records"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowHistory"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/txtHistoryTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/txtHistoryTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardApplyLeave"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@+id/cardMyLeave"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardAttendanceMain">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundApplyLeave"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="28dp"-->
+    <!--                                android:layout_height="28dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/leave" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowApplyLeave"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtApplyLeaveTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Apply Leave"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowApplyLeave"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundApplyLeave"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundApplyLeave"/>-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtApplyLeaveSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="Request Time Off"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowApplyLeave"-->
+    <!--                            app:layout_constraintStart_toStartOf="@id/txtApplyLeaveTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/txtApplyLeaveTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardMyLeave"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toEndOf="@+id/cardApplyLeave"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardAttendanceMain">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundMyLeave"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="24dp"-->
+    <!--                                android:layout_height="24dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/history" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowMyLeave"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtMyLeaveTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="My Leave"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="16sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowMyLeave"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundMyLeave"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundMyLeave" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtMyLeaveSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="Check Leave Status"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowMyLeave"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/txtMyLeaveTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/txtMyLeaveTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardLeaveApproval"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintHorizontal_chainStyle="spread"-->
+    <!--                    app:layout_constraintStart_toStartOf="parent"-->
+    <!--                    app:layout_constraintEnd_toStartOf="@+id/cardUserSalary"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardApplyLeave">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundApproval"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="28dp"-->
+    <!--                                android:layout_height="24dp"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/approved"/>-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowApproval"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtApprovalTitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="8dp"-->
+    <!--                            android:text="Leave Approval"-->
+    <!--                            android:textColor="#212121"-->
+    <!--                            android:textSize="14sp"-->
+    <!--                            android:textStyle="bold"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowApproval"-->
+    <!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundApproval"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundApproval"/>-->
+
+    <!--                        <TextView-->
+    <!--                            android:id="@+id/txtApprovalSubtitle"-->
+    <!--                            android:layout_width="0dp"-->
+    <!--                            android:layout_height="wrap_content"-->
+    <!--                            android:layout_marginTop="2dp"-->
+    <!--                            android:ellipsize="end"-->
+    <!--                            android:maxLines="1"-->
+    <!--                            android:text="Approve Requests"-->
+    <!--                            android:textColor="#757575"-->
+    <!--                            android:textSize="11sp"-->
+    <!--                            app:layout_constraintEnd_toStartOf="@id/imgArrowApproval"-->
+    <!--                            app:layout_constraintStart_toStartOf="@id/txtApprovalTitle"-->
+    <!--                            app:layout_constraintTop_toBottomOf="@id/txtApprovalTitle" />-->
+    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    <!--                </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                <com.google.android.material.card.MaterialCardView-->
+    <!--                    android:id="@+id/cardUserSalary"-->
+    <!--                    android:layout_width="0dp"-->
+    <!--                    android:layout_height="120dp"-->
+    <!--                    android:layout_margin="8dp"-->
+    <!--                    android:clickable="true"-->
+    <!--                    android:focusable="true"-->
+    <!--                    app:cardBackgroundColor="@android:color/white"-->
+    <!--                    app:cardCornerRadius="18dp"-->
+    <!--                    app:cardElevation="4dp"-->
+    <!--                    app:layout_constraintHorizontal_weight="1"-->
+    <!--                    app:layout_constraintStart_toEndOf="@+id/cardLeaveApproval"-->
+    <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                    app:layout_constraintTop_toBottomOf="@+id/cardApplyLeave">-->
+
+    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="match_parent"-->
+    <!--                        android:padding="16dp">-->
+
+    <!--                        <com.google.android.material.card.MaterialCardView-->
+    <!--                            android:id="@+id/iconBackgroundSalary"-->
+    <!--                            android:layout_width="40dp"-->
+    <!--                            android:layout_height="40dp"-->
+    <!--                            app:cardBackgroundColor="#E8F5E9"-->
+    <!--                            app:cardCornerRadius="20dp"-->
+    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--                            <ImageView-->
+    <!--                                android:layout_width="wrap_content"-->
+    <!--                                android:layout_height="wrap_content"-->
+    <!--                                android:layout_gravity="center"-->
+    <!--                                android:src="@drawable/rupee" />-->
+    <!--                        </com.google.android.material.card.MaterialCardView>-->
+
+    <!--                        <ImageView-->
+    <!--                            android:id="@+id/imgArrowSalary"-->
+    <!--                            android:layout_width="16dp"-->
+    <!--                            android:layout_height="16dp"-->
+    <!--                            android:src="@drawable/arrow"-->
+    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--                            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtSalaryTitle"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="8dp"-->
+<!--                            android:text="Salary"-->
+<!--                            android:textColor="#212121"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowSalary"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/iconBackgroundSalary"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/iconBackgroundSalary" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtSalarySubtitle"-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="2dp"-->
+<!--                            android:ellipsize="end"-->
+<!--                            android:maxLines="1"-->
+<!--                            android:text="View Salary Details"-->
+<!--                            android:textColor="#757575"-->
+<!--                            android:textSize="11sp"-->
+<!--                            app:layout_constraintEnd_toStartOf="@+id/imgArrowSalary"-->
+<!--                            app:layout_constraintStart_toStartOf="@+id/txtSalaryTitle"-->
+<!--                            app:layout_constraintTop_toBottomOf="@+id/txtSalaryTitle" />-->
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/cardLogout"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:layout_margin="8dp"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    app:cardBackgroundColor="@android:color/white"-->
+<!--                    app:cardCornerRadius="18dp"-->
+<!--                    app:cardElevation="4dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/cardLeaveApproval">-->
+
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:padding="16dp">-->
+
+<!--                        <com.google.android.material.card.MaterialCardView-->
+<!--                            android:id="@+id/iconBackgroundLogout"-->
+<!--                            android:layout_width="38dp"-->
+<!--                            android:layout_height="38dp"-->
+<!--                            app:cardBackgroundColor="#FFEBEE"-->
+<!--                            app:cardCornerRadius="19dp"-->
+<!--                            app:layout_constraintStart_toStartOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="20dp"-->
+<!--                                android:layout_height="20dp"-->
+<!--                                android:layout_gravity="center"-->
+<!--                                android:src="@drawable/user"-->
+<!--                                app:tint="#D32F2F" />-->
+<!--                        </com.google.android.material.card.MaterialCardView>-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/txtLogoutTitle"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="16dp"-->
+<!--                            android:text="Logout"-->
+<!--                            android:textColor="#D32F2F"-->
+<!--                            android:textSize="16sp"-->
+<!--                            android:textStyle="bold"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintStart_toEndOf="@+id/iconBackgroundLogout"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/imgArrowLogout"-->
+<!--                            android:layout_width="16dp"-->
+<!--                            android:layout_height="16dp"-->
+<!--                            android:src="@drawable/arrow"-->
+<!--                            app:tint="#D32F2F"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            app:layout_constraintEnd_toEndOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent" />-->
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtFooterCopyright"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:text="© 2026 AgriBird.All Rights Reserved"-->
+<!--                    android:textSize="12sp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="#829684"-->
+<!--                    android:letterSpacing="0.05"-->
+<!--                    android:fontFamily="sans-serif-medium"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/cardLogout"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/txtFooterProperty"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:layout_marginBottom="16dp"-->
+<!--                    android:text="Property of AgriBird Services Pvt.Ltd"-->
+<!--                    android:textSize="11sp"-->
+<!--                    android:textColor="#A4B5A6"-->
+<!--                    android:fontFamily="sans-serif-light"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/txtFooterCopyright"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--    </ScrollView>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

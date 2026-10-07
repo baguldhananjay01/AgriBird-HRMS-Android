@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardEmployeeForm"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:strokeColor="#EAEFEA"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLeaveIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:cardBackgroundColor="#E8F5E9"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgLeaveIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="9dp"
+                android:contentDescription="Apply Leave"
+                android:src="@drawable/leave"
+                app:tint="#2E7D32" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/txtLeaveTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Apply Leave"
+            android:textColor="#112513"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/cardLeaveIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardLeaveIcon" />
+
+
+        <TextView
+            android:id="@+id/txtLeaveSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="2dp"
+            android:text="Submit your leave request"
+            android:textColor="#667085"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/cardLeaveIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtLeaveTitle" />
+
+
+        <View
+            android:id="@+id/dividerLeaveHeader"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="#EAEFEA"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardLeaveIcon" />
+
+
+        <!-- ================================================= -->
+        <!-- EMPLOYEE NAME                                    -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/lblUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Employee Name *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividerLeaveHeader" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/userContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblUser">
+
+            <ImageView
+                android:id="@+id/imgUserIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Employee Name"
+                android:src="@drawable/user"
+                app:tint="#667085"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/edtUser"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Auto Filled"
+                android:padding="0dp"
+                android:singleLine="true"
+                android:textColor="#112513"
+                android:textColorHint="#98A2B3"
+                android:textSize="13sp"
+                app:layout_constraintStart_toEndOf="@id/imgUserIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ================================================= -->
+        <!-- EMPLOYEE ID                                      -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/lblId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Employee ID *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userContainer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/idContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblId">
+
+            <ImageView
+                android:id="@+id/imgIdIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:contentDescription="Employee ID"
+                android:src="@drawable/id"
+                app:tint="#667085"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/edtId"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginStart="10dp"
+
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Auto Filled"
+                android:padding="0dp"
+                android:singleLine="true"
+
+                android:textColor="#112513"
+                android:textColorHint="#98A2B3"
+                android:textSize="13sp"
+
+                app:layout_constraintStart_toEndOf="@id/imgIdIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ================================================= -->
+        <!-- LEAVE TYPE                                       -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/lblLeaveType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Leave Type *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idContainer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/leaveTypeContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="4dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblLeaveType">
+
+            <ImageView
+                android:id="@+id/imgLeaveTypeIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:contentDescription="Leave Type"
+                android:src="@drawable/board"
+                app:tint="#667085"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerLeaveType"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginStart="10dp"
+                android:background="@android:color/transparent"
+                android:entries="@array/leave_types"
+                android:padding="0dp"
+
+                app:layout_constraintStart_toEndOf="@id/imgLeaveTypeIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ================================================= -->
+        <!-- START DATE                                       -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/lblStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Start Date *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leaveTypeContainer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/startDateContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblStartDate">
+
+            <ImageView
+                android:id="@+id/imgStartDateIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:contentDescription="Start Date"
+                android:src="@drawable/calendar"
+                app:tint="#667085"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/edtStartDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginStart="10dp"
+
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Select start date"
+                android:padding="0dp"
+                android:singleLine="true"
+
+                android:textColor="#112513"
+                android:textColorHint="#98A2B3"
+                android:textSize="13sp"
+
+                app:layout_constraintStart_toEndOf="@id/imgStartDateIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/lblEndDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:text="End Date *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/startDateContainer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/endDateContainer"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblEndDate">
+
+            <ImageView
+                android:id="@+id/imgEndDateIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:contentDescription="End Date"
+                android:src="@drawable/calendar"
+                app:tint="#667085"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <EditText
+                android:id="@+id/editEndDate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginStart="10dp"
+
+                android:background="@android:color/transparent"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Select end date"
+                android:padding="0dp"
+                android:singleLine="true"
+
+                android:textColor="#112513"
+                android:textColorHint="#98A2B3"
+                android:textSize="13sp"
+
+                app:layout_constraintStart_toEndOf="@id/imgEndDateIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ================================================= -->
+        <!-- REASON                                            -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:id="@+id/lblReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:text="Reason *"
+            android:textColor="#112513"
+            android:textSize="12sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endDateContainer" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reasonContainer"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblReason">
+
+            <ImageView
+                android:id="@+id/imgReasonIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:contentDescription="Leave Reason"
+                android:src="@drawable/page"
+                app:tint="#667085"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edtReason"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+
+                android:layout_marginStart="10dp"
+
+                android:background="@android:color/transparent"
+                android:gravity="top|start"
+                android:hint="Enter reason for leave..."
+                android:inputType="textMultiLine"
+                android:padding="0dp"
+                android:textColor="#112513"
+                android:textColorHint="#98A2B3"
+                android:textSize="13sp"
+
+                app:layout_constraintStart_toEndOf="@id/imgReasonIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmitLeave"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="18dp"
+            android:text="Submit Leave Request"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="#2E7D32"
+            app:cornerRadius="10dp"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@android:color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reasonContainer"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

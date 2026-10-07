@@ -1,0 +1,70 @@
+<!-- res/drawable/donut_chart.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer Ring (Gray Background) -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="35dp"
+            android:thickness="12dp"
+            android:useLevel="false">
+            <solid android:color="#E8ECF0" />
+        </shape>
+    </item>
+
+    <!-- Present (Green) - 81.6% -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="35dp"
+            android:thickness="12dp"
+            android:useLevel="false">
+            <solid android:color="#12B76A" />
+        </shape>
+    </item>
+
+    <!-- Absent (Red) - 8.3% -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="35dp"
+            android:thickness="12dp"
+            android:useLevel="false">
+            <solid android:color="#F04438" />
+        </shape>
+    </item>
+
+    <!-- On Leave (Orange) - 6.6% -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="35dp"
+            android:thickness="12dp"
+            android:useLevel="false">
+            <solid android:color="#F79009" />
+        </shape>
+    </item>
+
+    <!-- Half Day (Purple) - 3.3% -->
+    <item>
+        <shape android:shape="ring"
+            android:innerRadius="35dp"
+            android:thickness="12dp"
+            android:useLevel="false">
+            <solid android:color="#8B5CF6" />
+        </shape>
+    </item>
+
+    <!-- Center Hole -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF" />
+            <size android:width="70dp" android:height="70dp" />
+        </shape>
+    </item>
+
+    <!-- Center Text -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#FFFFFF" />
+            <size android:width="70dp" android:height="70dp" />
+        </shape>
+    </item>
+
+</layer-list>

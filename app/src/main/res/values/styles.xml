@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.Fab_Bottom_app_bar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#0F9D58</item>
+        <item name="colorPrimaryVariant">#0F9D58</item>
+        <item name="colorOnPrimary">#000</item>
+    </style>
+
+    <!-- Bottom Navigation Active Text -->
+    <style name="BottomNavigationTextActive"
+        parent="TextAppearance.MaterialComponents.Caption">
+
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans</item>
+
+    </style>
+
+
+    <!-- Bottom Navigation Inactive Text -->
+    <style name="BottomNavigationTextInactive"
+        parent="TextAppearance.MaterialComponents.Caption">
+
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:fontFamily">sans</item>
+
+    </style>
+
+</resources>

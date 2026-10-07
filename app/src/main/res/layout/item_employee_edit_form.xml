@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp"
+    app:strokeColor="#C8E0C8"
+    app:strokeWidth="1.5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutEmployeeSummary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_background"
+            android:backgroundTint="#F4FBF4"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEmployeePhoto"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgEmployeePhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Employee Photo"
+                    android:padding="14dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/user"
+                    app:tint="#1B5E20" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtEmployeeName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Ramesh Patil"
+                android:textColor="#0A1F0A"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"
+                app:layout_constraintTop_toTopOf="@id/cardEmployeePhoto" />
+
+            <TextView
+                android:id="@+id/txtEmployeeId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:text="EMP00125"
+                android:textColor="#2E7D32"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"
+                app:layout_constraintTop_toBottomOf="@id/txtEmployeeName" />
+
+            <TextView
+                android:id="@+id/txtEmployeeRole"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:text="• Field Supervisor"
+                android:textColor="#4A6B4A"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"
+                app:layout_constraintTop_toBottomOf="@id/txtEmployeeId" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ====================================== -->
+        <!-- 2. PERSONAL INFORMATION HEADER        -->
+        <!-- ====================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutPersonalHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutEmployeeSummary">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardPersonalIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Personal Information"
+                    android:padding="8dp"
+                    android:src="@drawable/user"
+                    app:tint="#1B5E20" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtPersonalInformation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Personal Information"
+                android:textColor="#1B5E20"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardPersonalIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#C8E0C8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtPersonalInformation"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ====================================== -->
+        <!-- 3. FULL NAME & EMAIL                   -->
+        <!-- ====================================== -->
+
+        <TextView
+            android:id="@+id/lblFullName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Full Name"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutPersonalHeader" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Full name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblFullName" />
+
+        <TextView
+            android:id="@+id/lblEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Email Address"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editName" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Email address"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblEmail" />
+
+
+        <!-- ====================================== -->
+        <!-- 4. PHONE & EMERGENCY CONTACT          -->
+        <!-- ====================================== -->
+
+        <TextView
+            android:id="@+id/lblPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Phone Number"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editEmail" />
+
+        <EditText
+            android:id="@+id/editPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:hint="10-digit phone number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblPhone" />
+
+        <TextView
+            android:id="@+id/lblEmergencyPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Emergency Contact"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editPhone" />
+
+        <EditText
+            android:id="@+id/eEmergencyPhone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:hint="10-digit emergency number"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblEmergencyPhone" />
+
+
+        <!-- ====================================== -->
+        <!-- 5. BLOOD GROUP & ADDRESS              -->
+        <!-- ====================================== -->
+
+        <TextView
+            android:id="@+id/lblBloodGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Blood Group"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eEmergencyPhone" />
+
+        <Spinner
+            android:id="@+id/spBloodGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:minHeight="48dp"
+            android:paddingHorizontal="8dp"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblBloodGroup" />
+
+        <TextView
+            android:id="@+id/lblAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Address"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spBloodGroup" />
+
+        <EditText
+            android:id="@+id/eAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:gravity="top|start"
+            android:hint="Full residential address"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:padding="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblAddress" />
+
+
+        <!-- ====================================== -->
+        <!-- 6. EMPLOYMENT DETAILS HEADER          -->
+        <!-- ====================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutEmploymentHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eAddress">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEmploymentIcon"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:cardBackgroundColor="#E8F5E9"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="Employment Details"
+                    android:padding="8dp"
+                    android:src="@drawable/job_description"
+                    app:tint="#1B5E20" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtEmploymentDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Employment Details"
+                android:textColor="#1B5E20"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardEmploymentIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="12dp"
+                android:background="#C8E0C8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtEmploymentDetails"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ====================================== -->
+        <!-- 7. DEPARTMENT & ROLE                   -->
+        <!-- ====================================== -->
+
+        <TextView
+            android:id="@+id/lblDepartment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Department"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutEmploymentHeader" />
+
+        <Spinner
+            android:id="@+id/emList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:minHeight="48dp"
+            android:paddingHorizontal="8dp"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblDepartment" />
+
+        <TextView
+            android:id="@+id/lblRole"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Role"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emList" />
+
+        <Spinner
+            android:id="@+id/emRoleList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:minHeight="48dp"
+            android:paddingHorizontal="8dp"
+            android:spinnerMode="dropdown"
+            android:popupBackground="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblRole" />
+
+
+        <!-- ====================================== -->
+        <!-- 8. EMPLOYEE ID & JOINING DATE         -->
+        <!-- ====================================== -->
+
+        <TextView
+            android:id="@+id/lblEmployeeId"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Employee ID"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emRoleList" />
+
+        <EditText
+            android:id="@+id/editID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Employee ID"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblEmployeeId" />
+
+        <TextView
+            android:id="@+id/lblJoiningDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Joining Date"
+            android:textColor="#1B2E1B"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editID" />
+
+        <EditText
+            android:id="@+id/eJoiningDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/edittext_background"
+            android:clickable="true"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+            android:focusable="false"
+            android:hint="Select date"
+            android:inputType="none"
+            android:minHeight="48dp"
+            android:paddingHorizontal="14dp"
+            android:textColor="#0A1F0A"
+            android:textColorHint="#829684"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lblJoiningDate" />
+
+
+        <!-- ====================================== -->
+        <!-- 9. INFO MESSAGE (HEAVY)               -->
+        <!-- ====================================== -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/edittext_background"
+            android:backgroundTint="#E8F5E9"
+            android:padding="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eJoiningDate">
+
+            <ImageView
+                android:id="@+id/imgInfo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Info Icon"
+                android:src="@drawable/info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="#1B5E20" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Ensure all details are accurate before saving. Changes will be applied immediately."
+                android:textColor="#1B5E20"
+                android:textSize="12sp"
+                android:lineSpacingExtra="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgInfo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!-- ====================================== -->
+        <!-- 10. ACTION BUTTONS (HEAVY)            -->
+        <!-- ====================================== -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="6dp"
+            android:text="✕ Cancel"
+            android:textAllCaps="false"
+            android:textColor="#C62828"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSaveChanges"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutInfo"
+            app:strokeColor="#E57373"
+            app:strokeWidth="1.5dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSaveChanges"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="6dp"
+            android:text="▣ Save Changes"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:backgroundTint="#2E7D32"
+            app:cornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnCancel"
+            app:layout_constraintTop_toTopOf="@id/btnCancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<com.google.android.material.card.MaterialCardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    app:cardBackgroundColor="@android:color/white"-->
+<!--    app:cardCornerRadius="16dp"-->
+<!--    app:cardElevation="3dp"-->
+<!--    app:strokeColor="#EAEFEA"-->
+<!--    app:strokeWidth="1dp">-->
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:padding="14dp">-->
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 1. EMPLOYEE SUMMARY HEADER             &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/layoutEmployeeSummary"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:padding="10dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cardEmployeePhoto"-->
+<!--                android:layout_width="56dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                app:cardBackgroundColor="#E8F5E9"-->
+<!--                app:cardCornerRadius="28dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgEmployeePhoto"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:contentDescription="Employee Photo"-->
+<!--                    android:padding="12dp"-->
+<!--                    android:scaleType="centerInside"-->
+<!--                    android:src="@drawable/user"-->
+<!--                    app:tint="#2E7D32" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmployeeName"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="12dp"-->
+<!--                android:text="Ramesh Patil"-->
+<!--                android:textColor="#112513"-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"-->
+<!--                app:layout_constraintTop_toTopOf="@id/cardEmployeePhoto" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmployeeId"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="12dp"-->
+<!--                android:layout_marginTop="2dp"-->
+<!--                android:text="EMP00125"-->
+<!--                android:textColor="#2E7D32"-->
+<!--                android:textSize="13sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtEmployeeName" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmployeeRole"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="12dp"-->
+<!--                android:layout_marginTop="1dp"-->
+<!--                android:text="Field Supervisor"-->
+<!--                android:textColor="#667868"-->
+<!--                android:textSize="12sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cardEmployeePhoto"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtEmployeeId" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 2. PERSONAL INFORMATION HEADER         &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/layoutPersonalHeader"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/layoutEmployeeSummary">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cardPersonalIcon"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="32dp"-->
+<!--                app:cardBackgroundColor="#E8F5E9"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:contentDescription="Personal Information"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:src="@drawable/user"-->
+<!--                    app:tint="#2E7D32" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtPersonalInformation"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="Personal Information"-->
+<!--                android:textColor="#1B5E20"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cardPersonalIcon"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:background="#DDEBDD"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/txtPersonalInformation"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 3. FULL NAME & EMAIL                   &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Full Name &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblFullName"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:text="Full Name"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/layoutPersonalHeader" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editName"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:hint="Full name"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblFullName" />-->
+
+<!--        &lt;!&ndash; Email Address &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblEmail"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Email Address"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/editName" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editEmail"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:hint="Email address"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblEmail" />-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 4. PHONE & EMERGENCY CONTACT           &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Primary Phone Number &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblPhone"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Phone Number"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/editEmail" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editPhone"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:hint="10-digit phone number"-->
+<!--            android:inputType="phone"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblPhone" />-->
+
+<!--        &lt;!&ndash; Emergency Phone Number (NEW) &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblEmergencyPhone"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Emergency Contact Number"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/editPhone" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/eEmergencyPhone"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:hint="10-digit emergency contact"-->
+<!--            android:inputType="phone"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblEmergencyPhone" />-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 5. BLOOD GROUP & ADDRESS               &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Blood Group Spinner (NEW) &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblBloodGroup"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Blood Group"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/eEmergencyPhone" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/spBloodGroup"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblBloodGroup" />-->
+
+<!--        &lt;!&ndash; Address (NEW) &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblAddress"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Address"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/spBloodGroup" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/eAddress"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:gravity="top|start"-->
+<!--            android:hint="Full residential address"-->
+<!--            android:inputType="textMultiLine"-->
+<!--            android:minLines="3"-->
+<!--            android:padding="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblAddress" />-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 6. EMPLOYMENT DETAILS HEADER           &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/layoutEmploymentHeader"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="18dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/eAddress">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:id="@+id/cardEmploymentIcon"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="32dp"-->
+<!--                app:cardBackgroundColor="#E8F5E9"-->
+<!--                app:cardCornerRadius="16dp"-->
+<!--                app:cardElevation="0dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:contentDescription="Employment Details"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:src="@drawable/job_description"-->
+<!--                    app:tint="#2E7D32" />-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/txtEmploymentDetails"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:text="Employment Details"-->
+<!--                android:textColor="#1B5E20"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/cardEmploymentIcon"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <View-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="1dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:background="#DDEBDD"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/txtEmploymentDetails"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 7. DEPARTMENT & ROLE                   &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Department &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblDepartment"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:text="Department"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/layoutEmploymentHeader" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/emList"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblDepartment" />-->
+
+<!--        &lt;!&ndash; Role (Spinner Changed from EditText) &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblRole"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Role"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/emList" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/emRoleList"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="8dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblRole" />-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 8. EMPLOYEE ID & JOINING DATE          &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Employee ID &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblEmployeeId"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Employee ID"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/emRoleList" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/editID"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:hint="Employee ID"-->
+<!--            android:inputType="text"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblEmployeeId" />-->
+
+<!--        &lt;!&ndash; Joining Date &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/lblJoiningDate"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:text="Joining Date"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/editID" />-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/eJoiningDate"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:clickable="true"-->
+<!--            android:drawableEnd="@android:drawable/ic_menu_my_calendar"-->
+<!--            android:focusable="false"-->
+<!--            android:hint="Select date"-->
+<!--            android:inputType="none"-->
+<!--            android:minHeight="44dp"-->
+<!--            android:paddingHorizontal="12dp"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textColorHint="#829684"-->
+<!--            android:textSize="13sp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/lblJoiningDate" />-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 9. INFO MESSAGE                        &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/layoutInfo"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@drawable/edittext_background"-->
+<!--            android:padding="10dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/eJoiningDate">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imgInfo"-->
+<!--                android:layout_width="18dp"-->
+<!--                android:layout_height="18dp"-->
+<!--                android:contentDescription="Info Icon"-->
+<!--                android:src="@drawable/info"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:tint="#2E7D32" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="Make sure all information is correct before saving changes."-->
+<!--                android:textColor="#2E7D32"-->
+<!--                android:textSize="11sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@id/imgInfo"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+<!--        &lt;!&ndash; 10. ACTION BUTTONS                      &ndash;&gt;-->
+<!--        &lt;!&ndash; ====================================== &ndash;&gt;-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btnCancel"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="44dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:text="✕ Cancel"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#C62828"-->
+<!--            android:textSize="13sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:backgroundTint="@android:color/white"-->
+<!--            app:cornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/btnSaveChanges"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/layoutInfo"-->
+<!--            app:strokeColor="#E57373"-->
+<!--            app:strokeWidth="1dp" />-->
+
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/btnSaveChanges"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="44dp"-->
+<!--            android:layout_marginStart="10dp"-->
+<!--            android:text="▣ Save Changes"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textSize="13sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:backgroundTint="#2E7D32"-->
+<!--            app:cornerRadius="10dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@id/btnCancel"-->
+<!--            app:layout_constraintTop_toTopOf="@id/btnCancel" />-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--</com.google.android.material.card.MaterialCardView>-->

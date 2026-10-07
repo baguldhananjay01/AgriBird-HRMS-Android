@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F4F7F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmployeeProfileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#F4F7F5"
+            app:cardCornerRadius="55dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#AFE1AF"
+            app:strokeWidth="2dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgemployeeProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="6dp"
+                android:contentDescription="Employee Profile Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnChangePhoto"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            app:cardBackgroundColor="#2E7D32"
+            app:cardCornerRadius="17dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@id/cardEmployeeProfileImage"
+            app:layout_constraintEnd_toEndOf="@id/cardEmployeeProfileImage"
+            app:strokeColor="#FFFFFF"
+            app:strokeWidth="2dp">
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_gravity="center"
+                android:contentDescription="Edit Photo"
+                android:src="@drawable/edit_icon"
+                app:tint="#FFFFFF" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================= USER NAME ================= -->
+
+        <TextView
+            android:id="@+id/txtUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="SUMIT RAVINDRA SHELAR"
+            android:textColor="#1A1A1A"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEmployeeProfileImage" />
+
+
+        <!-- ================= PHONE ================= -->
+
+        <TextView
+            android:id="@+id/txtPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="+91 9552360154"
+            android:textColor="#667085"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtUserName" />
+
+
+        <!-- ================= PERSONAL DETAILS TITLE ================= -->
+
+        <TextView
+            android:id="@+id/txtpersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:letterSpacing="0.2"
+            android:text="PERSONAL DETAILS"
+            android:textColor="#344054"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtPhone" />
+
+
+        <!-- ================= PERSONAL DETAILS CARD ================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPersonalDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtpersonal"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="20dp">
+
+                <!-- ================= EDIT BUTTON (Top Right) ================= -->
+                <ImageView
+                    android:id="@+id/btnEditPersonalDetails"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="Edit Personal Details"
+                    android:focusable="true"
+                    android:padding="6dp"
+                    android:src="@drawable/edit_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#667085" />
+
+                <!-- ================= 1. FULL NAME ================= -->
+                <View
+                    android:id="@+id/bgFullName"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgWelcomeIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Full Name"
+                    android:src="@drawable/user"
+                    app:layout_constraintBottom_toBottomOf="@id/bgFullName"
+                    app:layout_constraintEnd_toEndOf="@id/bgFullName"
+                    app:layout_constraintStart_toStartOf="@id/bgFullName"
+                    app:layout_constraintTop_toTopOf="@id/bgFullName" />
+
+                <TextView
+                    android:id="@+id/txtWelcomeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Dhananjay Bagul"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgFullName"
+                    app:layout_constraintEnd_toStartOf="@id/btnEditPersonalDetails"
+                    app:layout_constraintStart_toEndOf="@id/bgFullName"
+                    app:layout_constraintTop_toTopOf="@id/bgFullName" />
+
+
+                <!-- ================= 2. ROLE ================= -->
+                <View
+                    android:id="@+id/bgRole"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgFullName" />
+
+                <ImageView
+                    android:id="@+id/imgroleIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Employee Role"
+                    android:src="@drawable/job_description"
+                    app:layout_constraintBottom_toBottomOf="@id/bgRole"
+                    app:layout_constraintEnd_toEndOf="@id/bgRole"
+                    app:layout_constraintStart_toStartOf="@id/bgRole"
+                    app:layout_constraintTop_toTopOf="@id/bgRole" />
+
+                <TextView
+                    android:id="@+id/txtRole"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="HR Executive"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgRole"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bgRole"
+                    app:layout_constraintTop_toTopOf="@id/bgRole" />
+
+
+                <!-- ================= 3. EMAIL ================= -->
+                <View
+                    android:id="@+id/bgEmail"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgRole" />
+
+                <ImageView
+                    android:id="@+id/imgemailIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Email"
+                    android:src="@drawable/mail"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmail"
+                    app:layout_constraintEnd_toEndOf="@id/bgEmail"
+                    app:layout_constraintStart_toStartOf="@id/bgEmail"
+                    app:layout_constraintTop_toTopOf="@id/bgEmail" />
+
+                <TextView
+                    android:id="@+id/txtemail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="example@gmail.com"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bgEmail"
+                    app:layout_constraintTop_toTopOf="@id/bgEmail" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================= EMPLOYMENT DETAILS TITLE ================= -->
+
+        <TextView
+            android:id="@+id/txtEmploymentDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:letterSpacing="0.2"
+            android:text="EMPLOYMENT DETAILS"
+            android:textColor="#344054"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardPersonalDetails" />
+
+
+        <!-- ================= EMPLOYMENT CARD ================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmploymentDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtEmploymentDetails"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="20dp">
+
+                <!-- 1. DEPARTMENT -->
+                <View
+                    android:id="@+id/bgDepartment"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imgDepartmentIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Department"
+                    android:src="@drawable/work"
+                    app:layout_constraintBottom_toBottomOf="@id/bgDepartment"
+                    app:layout_constraintEnd_toEndOf="@id/bgDepartment"
+                    app:layout_constraintStart_toStartOf="@id/bgDepartment"
+                    app:layout_constraintTop_toTopOf="@id/bgDepartment"
+                    app:tint="#000000" />
+
+                <TextView
+                    android:id="@+id/txtDepartment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Human Resources"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgDepartment"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bgDepartment"
+                    app:layout_constraintTop_toTopOf="@id/bgDepartment" />
+
+
+                <!-- 2. EMPLOYEE ID -->
+                <View
+                    android:id="@+id/bgEmployeeId"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgDepartment" />
+
+                <ImageView
+                    android:id="@+id/imgEmployeeIdIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Employee ID"
+                    android:src="@drawable/badge"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmployeeId"
+                    app:layout_constraintEnd_toEndOf="@id/bgEmployeeId"
+                    app:layout_constraintStart_toStartOf="@id/bgEmployeeId"
+                    app:layout_constraintTop_toTopOf="@id/bgEmployeeId" />
+
+                <TextView
+                    android:id="@+id/txtEmployeeId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="EMP1028"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmployeeId"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bgEmployeeId"
+                    app:layout_constraintTop_toTopOf="@id/bgEmployeeId" />
+
+
+                <!-- 3. JOINING DATE -->
+                <View
+                    android:id="@+id/bgJoiningDate"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgEmployeeId" />
+
+                <ImageView
+                    android:id="@+id/imgJoiningDateIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Joining Date"
+                    android:src="@drawable/calendar"
+                    app:layout_constraintBottom_toBottomOf="@id/bgJoiningDate"
+                    app:layout_constraintEnd_toEndOf="@id/bgJoiningDate"
+                    app:layout_constraintStart_toStartOf="@id/bgJoiningDate"
+                    app:layout_constraintTop_toTopOf="@id/bgJoiningDate" />
+
+                <TextView
+                    android:id="@+id/txtJoiningDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="12 January 2026"
+                    android:textColor="#112513"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgJoiningDate"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/bgJoiningDate"
+                    app:layout_constraintTop_toTopOf="@id/bgJoiningDate" />
+
+
+                <!-- 4. ACCOUNT STATUS -->
+                <View
+                    android:id="@+id/bgAccountStatus"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgJoiningDate" />
+
+                <ImageView
+                    android:id="@+id/imgStatusIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Account Status"
+                    android:src="@drawable/checklist"
+                    app:layout_constraintBottom_toBottomOf="@id/bgAccountStatus"
+                    app:layout_constraintEnd_toEndOf="@id/bgAccountStatus"
+                    app:layout_constraintStart_toStartOf="@id/bgAccountStatus"
+                    app:layout_constraintTop_toTopOf="@id/bgAccountStatus" />
+
+                <TextView
+                    android:id="@+id/txtStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Account Status"
+                    android:textColor="#667085"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txtStatusDescription"
+                    app:layout_constraintStart_toEndOf="@id/bgAccountStatus"
+                    app:layout_constraintTop_toTopOf="@id/bgAccountStatus"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/txtStatusDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Employee account is active"
+                    android:textColor="#344054"
+                    android:textSize="13sp"
+                    app:layout_constraintBottom_toBottomOf="@id/bgAccountStatus"
+                    app:layout_constraintEnd_toStartOf="@id/txtAccountStatus"
+                    app:layout_constraintStart_toEndOf="@id/bgAccountStatus"
+                    app:layout_constraintTop_toBottomOf="@id/txtStatusLabel" />
+
+                <TextView
+                    android:id="@+id/txtAccountStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/status_active_background"
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="6dp"
+                    android:text="ACTIVE"
+                    android:textColor="#0A9F5B"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgAccountStatus"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bgAccountStatus" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================= HR HELPDESK TITLE ================= -->
+
+        <TextView
+            android:id="@+id/txtHrHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="25dp"
+            android:letterSpacing="0.2"
+            android:text="HR HELPDESK &amp; SUPPORT"
+            android:textColor="#344054"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardEmploymentDetails" />
+
+
+        <!-- ================= HR HELPDESK CARD ================= -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardOfficeDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHrHelp"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="20dp">
+
+                <!-- ROW 1: CALL HR HELPDESK -->
+                <View
+                    android:id="@+id/bgHRCall"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icMyOrders"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/telephone"
+                    app:layout_constraintBottom_toBottomOf="@+id/bgHRCall"
+                    app:layout_constraintEnd_toEndOf="@id/bgHRCall"
+                    app:layout_constraintStart_toStartOf="@id/bgHRCall"
+                    app:layout_constraintTop_toTopOf="@id/bgHRCall"
+                    app:tint="#000000" />
+
+                <TextView
+                    android:id="@+id/tvHRCall"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Call HR Helpdesk"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgHRCall"
+                    app:layout_constraintEnd_toStartOf="@id/arrowHRCall"
+                    app:layout_constraintStart_toEndOf="@id/bgHRCall"
+                    app:layout_constraintTop_toTopOf="@id/bgHRCall" />
+
+                <ImageView
+                    android:id="@+id/arrowHRCall"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/bgHRCall"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bgHRCall"
+                    app:tint="#D3D3D3" />
+
+
+                <!-- ROW 2: EMAIL SUPPORT -->
+                <View
+                    android:id="@+id/bgEmailSupport"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgHRCall" />
+
+                <ImageView
+                    android:id="@+id/icEmailSupport"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/mail"
+                    app:layout_constraintBottom_toBottomOf="@+id/bgEmailSupport"
+                    app:layout_constraintEnd_toEndOf="@id/bgEmailSupport"
+                    app:layout_constraintStart_toStartOf="@id/bgEmailSupport"
+                    app:layout_constraintTop_toTopOf="@id/bgEmailSupport"
+                    app:tint="#000000" />
+
+                <TextView
+                    android:id="@+id/tvEmailSupport"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Email Support"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmailSupport"
+                    app:layout_constraintEnd_toStartOf="@id/arrowEmailSupport"
+                    app:layout_constraintStart_toEndOf="@id/bgEmailSupport"
+                    app:layout_constraintTop_toTopOf="@id/bgEmailSupport" />
+
+                <ImageView
+                    android:id="@+id/arrowEmailSupport"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/bgEmailSupport"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bgEmailSupport"
+                    app:tint="#D3D3D3" />
+
+
+                <!-- ROW 3: OFFICE LOCATION -->
+                <View
+                    android:id="@+id/bgShippingAddress"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_rounded_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bgEmailSupport" />
+
+                <ImageView
+                    android:id="@+id/icShippingAddress"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/maps"
+                    app:layout_constraintBottom_toBottomOf="@+id/bgShippingAddress"
+                    app:layout_constraintEnd_toEndOf="@id/bgShippingAddress"
+                    app:layout_constraintStart_toStartOf="@id/bgShippingAddress"
+                    app:layout_constraintTop_toTopOf="@id/bgShippingAddress"
+                    app:tint="#000000" />
+
+                <TextView
+                    android:id="@+id/tvShippingAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Find Office Location"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/bgShippingAddress"
+                    app:layout_constraintEnd_toStartOf="@id/arrowShippingAddress"
+                    app:layout_constraintStart_toEndOf="@id/bgShippingAddress"
+                    app:layout_constraintTop_toTopOf="@id/bgShippingAddress" />
+
+                <ImageView
+                    android:id="@+id/arrowShippingAddress"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@id/bgShippingAddress"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/bgShippingAddress"
+                    app:tint="#D3D3D3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ================= LOGOUT ACCOUNT BUTTON ================= -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardLogout"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="40dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="#10D32F2F"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardOfficeDetails"
+            app:strokeColor="#30D32F2F"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp">
+
+                <!-- Red Icon Circle Background -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/iconBackgroundLogout"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    app:cardBackgroundColor="#20D32F2F"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeWidth="0dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/user"
+                        app:tint="#D32F2F" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Logout Title Text -->
+                <TextView
+                    android:id="@+id/txtLogoutTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Logout"
+                    android:textColor="#D32F2F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/iconBackgroundLogout"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- Arrow Right Icon -->
+                <ImageView
+                    android:id="@+id/imgArrowLogout"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#D32F2F" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:background="#F2F0EF">-->
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardEmployeeProfileImage"-->
+<!--        android:layout_width="140dp"-->
+<!--        android:layout_height="140dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:background="#D3D3D3"-->
+<!--        app:cardCornerRadius="70dp"-->
+<!--        app:cardElevation="0dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:strokeColor="#A9A9A9"-->
+<!--        app:strokeWidth="1dp">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imgemployeeProfile"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/profile" />-->
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtUserName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:text="SUMIT RAVINDRA SHELAR"-->
+<!--        android:textColor="#1A1A1A"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/cardEmployeeProfileImage" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtPhone"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="+91 9552360154"-->
+<!--        android:textSize="15sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="6dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txtUserName"-->
+<!--        tools:layout_editor_absoluteY="231dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtpersonal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:letterSpacing="0.2"-->
+<!--        android:text="PERSONAL DETAILS "-->
+<!--        android:textSize="12sp"-->
+<!--        android:textStyle="bold|normal"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txtPhone" />-->
+
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardPersonalDetails"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="18dp"-->
+<!--        app:cardElevation="2dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txtpersonal"-->
+<!--        app:strokeWidth="0dp">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="16dp">-->
+
+<!--            &lt;!&ndash; Icon + Text Container &ndash;&gt;-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/txtWelcome"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:layout_marginBottom="18dp"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:minHeight="50dp"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingTop="12dp"-->
+<!--                android:paddingBottom="12dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                &lt;!&ndash; User Icon &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgWelcomeIcon"-->
+<!--                    android:layout_width="24dp"-->
+<!--                    android:layout_height="24dp"-->
+<!--                    android:contentDescription="User Profile"-->
+<!--                    android:src="@drawable/user"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:tint="#008000" />-->
+
+<!--                &lt;!&ndash; User Name &ndash;&gt;-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtWelcomeName"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="Dhananjay Bagul"-->
+<!--                    android:textColor="#112513"-->
+<!--                    android:textSize="15sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/imgWelcomeIcon"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/txtrolecard"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginBottom="18dp"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:minHeight="50dp"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingTop="12dp"-->
+<!--                android:paddingBottom="12dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtWelcome">-->
+
+<!--                &lt;!&ndash; Icon &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgroleIcon"-->
+<!--                    android:layout_width="25dp"-->
+<!--                    android:layout_height="25dp"-->
+<!--                    android:contentDescription="User Profile"-->
+<!--                    android:src="@drawable/job_description"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:tint="#008000" />-->
+
+<!--                &lt;!&ndash; User role &ndash;&gt;-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtRole"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="HR Executive"-->
+<!--                    android:textColor="#112513"-->
+<!--                    android:textSize="15sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/imgroleIcon"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/txtemailcard"-->
+<!--                android:layout_width="350dp"-->
+<!--                android:layout_height="56dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginBottom="18dp"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:minHeight="50dp"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingTop="12dp"-->
+<!--                android:paddingBottom="12dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtrolecard">-->
+
+<!--                &lt;!&ndash; Icon &ndash;&gt;-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgemailIcon"-->
+<!--                    android:layout_width="25dp"-->
+<!--                    android:layout_height="25dp"-->
+<!--                    android:contentDescription="User Profile"-->
+<!--                    android:src="@drawable/mail"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:tint="#008000" />-->
+
+<!--                &lt;!&ndash; User role &ndash;&gt;-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtemail"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="12dp"-->
+<!--                    android:text="example@gmail.com"-->
+<!--                    android:textColor="#112513"-->
+<!--                    android:textSize="15sp"-->
+<!--                    app:layout_constraintStart_toEndOf="@id/imgemailIcon"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent" />-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

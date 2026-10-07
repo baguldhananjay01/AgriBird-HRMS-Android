@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F4F7F5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- PROFILE IMAGE CONTAINER -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEmployeeProfileImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="#F4F7F5"
+            app:cardCornerRadius="55dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#AFE1AF"
+            app:strokeWidth="2dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgemployeeProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="6dp"
+                android:contentDescription="Employee Profile Image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/profile"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- TITLE SECTION -->
+        <TextView
+            android:id="@+id/txtpersonal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:letterSpacing="0.2"
+            android:text="EDIT INFORMATION"
+            android:textColor="#344054"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEmployeeProfileImage" />
+
+        <!-- FORM CONTAINER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFormDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="15dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtpersonal"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- 1. NAME -->
+                <TextView
+                    android:id="@+id/lblEmployeeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Employee Name"
+                    android:textColor="#7A8F7C"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="sans-serif"
+                    android:hint="Enter full name"
+                    android:inputType="textPersonName"
+                    android:minHeight="50dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="#112513"
+                    android:textColorHint="#A4B5A6"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblEmployeeName" />
+
+                <!-- 2. EMAIL -->
+                <TextView
+                    android:id="@+id/lblEmailAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Email Address"
+                    android:textColor="#7A8F7C"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editName" />
+
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="sans-serif"
+                    android:hint="Enter email address"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="50dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="#112513"
+                    android:textColorHint="#A4B5A6"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblEmailAddress" />
+
+                <!-- 3. PHONE NUMBER -->
+                <TextView
+                    android:id="@+id/lblPhoneNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Phone Number"
+                    android:textColor="#7A8F7C"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editEmail" />
+
+                <EditText
+                    android:id="@+id/editPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="sans-serif"
+                    android:hint="Enter phone number"
+                    android:inputType="phone"
+                    android:minHeight="50dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="#112513"
+                    android:textColorHint="#A4B5A6"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblPhoneNumber" />
+
+                <!-- 4. EMERGENCY CONTACT -->
+                <TextView
+                    android:id="@+id/lblEmergencyPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Emergency Contact Number"
+                    android:textColor="#7A8F7C"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editPhone" />
+
+                <EditText
+                    android:id="@+id/editEmergencyPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="sans-serif"
+                    android:hint="Enter emergency contact number"
+                    android:inputType="phone"
+                    android:minHeight="50dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="#112513"
+                    android:textColorHint="#A4B5A6"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblEmergencyPhone" />
+
+                <!-- 5. ADDRESS -->
+                <TextView
+                    android:id="@+id/lblAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:text="Address"
+                    android:textColor="#7A8F7C"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editEmergencyPhone" />
+
+                <EditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/edittext_background"
+                    android:fontFamily="sans-serif"
+                    android:gravity="top"
+                    android:hint="Enter complete address"
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:paddingStart="16dp"
+                    android:paddingTop="12dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="#112513"
+                    android:textColorHint="#A4B5A6"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblAddress" />
+
+                <!-- SAVE BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="28dp"
+                    android:letterSpacing="0.02"
+                    android:text="Save Changes"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#2E7D32"
+                    app:cornerRadius="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editAddress" />
+
+                <!-- CANCEL BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textColor="#556B58"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#E2EBE4"
+                    app:cornerRadius="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSave" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- FOOTER COPYRIGHT SECTION -->
+        <TextView
+            android:id="@+id/txtCopyrightTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.05"
+            android:text="© 2026 AgriBird. All Rights Reserved"
+            android:textColor="#829684"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardFormDetails" />
+
+        <TextView
+            android:id="@+id/txtCopyrightSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Property of AgriBird Services Pvt. Ltd"
+            android:textColor="#A4B5A6"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCopyrightTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:background="#F4F7F5"-->
+<!--    android:paddingBottom="30dp">-->
+
+<!--    &lt;!&ndash; 🟢 PROFILE IMAGE CONTAINER &ndash;&gt;-->
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardEmployeeProfileImage"-->
+<!--        android:layout_width="110dp"-->
+<!--        android:layout_height="110dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        app:cardBackgroundColor="#F4F7F5"-->
+<!--        app:cardCornerRadius="55dp"-->
+<!--        app:cardElevation="0dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:strokeColor="#AFE1AF"-->
+<!--        app:strokeWidth="2dp">-->
+
+<!--        <com.google.android.material.imageview.ShapeableImageView-->
+<!--            android:id="@+id/imgemployeeProfile"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="6dp"-->
+<!--            android:contentDescription="Employee Profile Image"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/employee"-->
+<!--            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--    &lt;!&ndash; Camera / Edit Badge Overlay &ndash;&gt;-->
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/btnChangePhoto"-->
+<!--        android:layout_width="34dp"-->
+<!--        android:layout_height="34dp"-->
+<!--        app:cardBackgroundColor="#2E7D32"-->
+<!--        app:cardCornerRadius="17dp"-->
+<!--        app:cardElevation="2dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/cardEmployeeProfileImage"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/cardEmployeeProfileImage"-->
+<!--        app:strokeColor="#FFFFFF"-->
+<!--        app:strokeWidth="2dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="18dp"-->
+<!--            android:layout_height="18dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:contentDescription="Edit Photo"-->
+<!--            android:src="@drawable/edit_icon"-->
+<!--            app:tint="#FFFFFF" />-->
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--    &lt;!&ndash; 🟢 TITLE SECTION &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/txtpersonal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginTop="25dp"-->
+<!--        android:letterSpacing="0.2"-->
+<!--        android:text="EDIT INFORMATION"-->
+<!--        android:textColor="#344054"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cardEmployeeProfileImage" />-->
+
+<!--    &lt;!&ndash; 🟢 FORM CONTAINER CARD &ndash;&gt;-->
+<!--    <com.google.android.material.card.MaterialCardView-->
+<!--        android:id="@+id/cardFormDetails"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        app:cardBackgroundColor="#FFFFFF"-->
+<!--        app:cardCornerRadius="24dp"-->
+<!--        app:cardElevation="3dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/txtpersonal"-->
+<!--        app:strokeWidth="0dp">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="20dp">-->
+
+<!--            &lt;!&ndash; 1. NAME LABEL &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/lblEmployeeName"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:letterSpacing="0.05"-->
+<!--                android:text="Employee Name"-->
+<!--                android:textColor="#7A8F7C"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            &lt;!&ndash; 1. NAME EDITTEXT &ndash;&gt;-->
+<!--            <EditText-->
+<!--                android:id="@+id/editName"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:fontFamily="sans-serif"-->
+<!--                android:hint="Enter full name"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:minHeight="50dp"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingTop="12dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingBottom="12dp"-->
+<!--                android:textColor="#112513"-->
+<!--                android:textColorHint="#A4B5A6"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/lblEmployeeName" />-->
+
+<!--            &lt;!&ndash; 2. EMAIL LABEL &ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:id="@+id/lblEmailAddress"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="18dp"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:letterSpacing="0.05"-->
+<!--                android:text="Email Address"-->
+<!--                android:textColor="#7A8F7C"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/editName" />-->
+
+<!--            &lt;!&ndash; 2. EMAIL EDITTEXT &ndash;&gt;-->
+<!--            <EditText-->
+<!--                android:id="@+id/editEmail"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="6dp"-->
+<!--                android:background="@drawable/edittext_background"-->
+<!--                android:fontFamily="sans-serif"-->
+<!--                android:hint="Enter email address"-->
+<!--                android:inputType="textEmailAddress"-->
+<!--                android:minHeight="50dp"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingTop="12dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingBottom="12dp"-->
+<!--                android:textColor="#112513"-->
+<!--                android:textColorHint="#A4B5A6"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/lblEmailAddress" />-->
+
+<!--            &lt;!&ndash; 3. SAVE BUTTON &ndash;&gt;-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btnSave"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:letterSpacing="0.02"-->
+<!--                android:text="Save Changes"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="#FFFFFF"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:backgroundTint="#2E7D32"-->
+<!--                app:cornerRadius="14dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/editEmail" />-->
+
+<!--            &lt;!&ndash; 4. CANCEL BUTTON &ndash;&gt;-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/btnCancel"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:text="Cancel"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="#556B58"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textStyle="bold"-->
+<!--                app:backgroundTint="#E2EBE4"-->
+<!--                app:cornerRadius="14dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/btnSave" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </com.google.android.material.card.MaterialCardView>-->
+
+<!--    &lt;!&ndash; 🟢 FOOTER COPYRIGHT SECTION &ndash;&gt;-->
+<!--    <TextView-->
+<!--        android:id="@+id/txtCopyrightTitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:fontFamily="sans-serif-medium"-->
+<!--        android:letterSpacing="0.05"-->
+<!--        android:text="© 2026 AgriBird. All Rights Reserved"-->
+<!--        android:textColor="#829684"-->
+<!--        android:textSize="12sp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/cardFormDetails" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/txtCopyrightSubtitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:fontFamily="sans-serif-light"-->
+<!--        android:text="Property of AgriBird Services Pvt. Ltd"-->
+<!--        android:textColor="#A4B5A6"-->
+<!--        android:textSize="11sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/txtCopyrightTitle" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

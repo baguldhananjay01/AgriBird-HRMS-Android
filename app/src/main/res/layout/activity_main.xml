@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/body_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8FC"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottomBarContainer"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_100sdp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_68sdp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="#E6E6FA"
+            app:fabCradleMargin="@dimen/_8sdp"
+            app:fabCradleRoundedCornerRadius="@dimen/_30sdp"
+            app:fabCradleVerticalOffset="@dimen/_4sdp"
+            app:hideOnScroll="false">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_Navigation_Bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_62sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:itemIconSize="@dimen/_22sdp"
+                app:itemPaddingTop="@dimen/_4sdp"
+                app:itemPaddingBottom="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_8ssp"
+                app:labelVisibilityMode="labeled"
+                android:background="@android:color/transparent"
+                app:elevation="0dp"
+                app:menu="@menu/bottom_nav_menu" />
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_view"
+            android:layout_width="@dimen/_52sdp"
+            android:layout_height="@dimen/_52sdp"
+            android:src="@drawable/assignment"
+            android:elevation="@dimen/_8sdp"
+            app:fabCustomSize="@dimen/_52sdp"
+            app:maxImageSize="@dimen/_24sdp"
+            app:layout_anchor="@id/bottomAppBar" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="#F7F8FC"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+<!--    -->
+<!--    <com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation-->
+<!--        android:id="@+id/bottomNavigation"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cbn_background="#4A3FD8"-->
+<!--        app:cbn_fabColor="@color/white"-->
+<!--        app:cbn_iconColor="@color/white"-->
+<!--        app:cbn_height="76dp"-->
+<!--        app:cbn_icon_size="24dp"-->
+<!--        app:cbn_curve_radius="26dp"-->
+<!--        app:cbn_selected_icon_size="48dp"-->
+<!--        app:cbn_selectedIconColor="@color/black"-->
+<!--        app:cbn_titleColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/body_container"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#F8F9FA"-->
+<!--    tools:context=".MainActivity">-->
+
+
+<!--    &lt;!&ndash; Fragment Container: He bottom navigation chya var rahil &ndash;&gt;-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fragmentContainer"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent" />-->
+
+<!--    <com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation-->
+<!--        android:id="@+id/bottomNavigation"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cbn_background="#FFFFFF"-->
+<!--        app:cbn_fabColor="#8B5CF6"-->
+<!--        app:cbn_iconColor="#C4C4C4"-->
+<!--        app:cbn_selectedIconColor="#4A4A4A"-->
+<!--        app:cbn_height="80dp"-->
+<!--        app:cbn_icon_size="24dp"-->
+<!--        app:cbn_curve_radius="26dp"-->
+<!--        app:cbn_selected_icon_size="28dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"/>-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Main Content Container &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <androidx.fragment.app.FragmentContainerView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/frameLayout"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintBottom_toTopOf="@id/bottomCard"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    &lt;!&ndash; Modern Curved Bottom Navigation Container &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    <com.google.android.material.card.MaterialCardView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/bottomCard"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="64dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:cardBackgroundColor="@color/white"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:cardCornerRadius="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:cardElevation="6dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:strokeColor="#F0F0F0"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:strokeWidth="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintEnd_toEndOf="parent">&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <com.google.android.material.bottomnavigation.BottomNavigationView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/bottomNavigationView"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:background="@android:color/transparent"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:elevation="0dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:itemIconSize="26dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:itemRippleColor="#1AFF5722"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:itemIconTint="@color/bottom_nav_color"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:labelVisibilityMode="selected"&ndash;&gt;-->
+<!--&lt;!&ndash;            app:menu="@menu/bottom_nav_menu" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </com.google.android.material.card.MaterialCardView>&ndash;&gt;-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

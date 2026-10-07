@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginBottom="6dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:strokeColor="#E0EBE0"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="12dp">
+
+    <!-- Avatar container -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/avatarContainer"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#F0F7F1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <ImageView
+        android:id="@+id/imgEmployee"
+        android:layout_width="@dimen/_32sdp"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/profile" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/tvEmployeeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="Rahul Sharma"
+        android:textColor="#112513"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/avatarContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/avatarContainer" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/tvEmployeeEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="2dp"
+        android:text="rahul@agribird.com"
+        android:textColor="#667868"
+        android:textSize="13sp"
+        android:fontFamily="sans-serif"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/avatarContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEmployeeName" />
+
+    <!-- Role chip (replaces LinearLayout) -->
+    <TextView
+        android:id="@+id/tvEmployeeRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="6dp"
+        android:text="Android Developer"
+        android:textColor="#2E7D32"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02"
+        android:fontFamily="sans-serif-medium"
+        android:includeFontPadding="false"
+        android:background="@drawable/bg_header_gradien"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintStart_toEndOf="@id/avatarContainer"
+        app:layout_constraintTop_toBottomOf="@id/tvEmployeeEmail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.cardview.widget.CardView-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="12dp"-->
+<!--    android:layout_marginEnd="12dp"-->
+<!--    android:layout_marginTop="6dp"-->
+<!--    android:layout_marginBottom="6dp"-->
+<!--    app:cardCornerRadius="16dp"-->
+<!--    app:cardElevation="0dp"-->
+<!--    app:cardBackgroundColor="#FFFFFF"-->
+<!--    app:strokeColor="#E6EFEA"-->
+<!--    app:strokeWidth="1dp"> <LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="horizontal"-->
+<!--    android:gravity="center_vertical"-->
+<!--    android:padding="14dp">-->
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="52dp"-->
+<!--        android:layout_height="52dp"-->
+<!--        app:cardCornerRadius="14dp"-->
+<!--        app:cardElevation="0dp"-->
+<!--        app:cardBackgroundColor="#F0F7F1"> <ImageView-->
+<!--        android:id="@+id/imgEmployee"-->
+<!--        android:layout_width="32dp"-->
+<!--        android:layout_height="32dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:scaleType="fitCenter"-->
+<!--        android:src="@drawable/employee" />-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvEmployeeName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Rahul Sharma"-->
+<!--            android:textColor="#112513"-->
+<!--            android:textSize="16sp"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:includeFontPadding="false" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/tvEmployeeEmail"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:text="rahul@agribird.com"-->
+<!--            android:textColor="#667868"-->
+<!--            android:textSize="13sp"-->
+<!--            android:fontFamily="sans-serif"-->
+<!--            android:includeFontPadding="false" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:background="@android:color/holo_green_light"-->
+<!--            android:backgroundTint="#E8F5E9"-->
+<!--            android:paddingStart="10dp"-->
+<!--            android:paddingEnd="10dp"-->
+<!--            android:paddingTop="4dp"-->
+<!--            android:paddingBottom="4dp">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvEmployeeRole"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Android Developer"-->
+<!--                android:textColor="#2E7D32"-->
+<!--                android:textSize="11sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:letterSpacing="0.02"-->
+<!--                android:fontFamily="sans-serif-medium"-->
+<!--                android:includeFontPadding="false" />-->
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--</LinearLayout>-->
+
+<!--</androidx.cardview.widget.CardView>-->

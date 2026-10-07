@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_background"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/loginScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_20sdp"
+            android:paddingTop="@dimen/_24sdp"
+            android:paddingBottom="@dimen/_24sdp">
+
+            <!-- Company Logo -->
+            <ImageView
+                android:id="@+id/imgLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:maxHeight="@dimen/_90sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/agri"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.60" />
+
+            <!-- Welcome -->
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.08"
+                android:text="WELCOME BACK"
+                android:textColor="@color/login_primary"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="AgriBird HRMS Login"
+                android:textColor="@color/login_title"
+                android:textSize="@dimen/_23ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtWelcome" />
+
+            <!-- Login Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_24sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtTitle"
+                app:strokeColor="@color/login_card_stroke"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_20sdp">
+
+                    <!-- Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tlEmail"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email Address"
+                        app:boxCornerRadiusBottomEnd="@dimen/_14sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_14sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_14sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_14sdp"
+                        app:boxStrokeColor="@color/login_primary"
+                        app:hintTextColor="@color/login_primary"
+                        app:startIconDrawable="@android:drawable/ic_dialog_email"
+                        app:startIconTint="@color/login_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/hName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/_14sdp"
+                            android:paddingBottom="@dimen/_14sdp"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tlPassword"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:hint="Password"
+                        app:boxCornerRadiusBottomEnd="@dimen/_14sdp"
+                        app:boxCornerRadiusBottomStart="@dimen/_14sdp"
+                        app:boxCornerRadiusTopEnd="@dimen/_14sdp"
+                        app:boxCornerRadiusTopStart="@dimen/_14sdp"
+                        app:boxStrokeColor="@color/login_primary"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/login_icon"
+                        app:hintTextColor="@color/login_primary"
+                        app:startIconDrawable="@android:drawable/ic_lock_lock"
+                        app:startIconTint="@color/login_icon"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tlEmail">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/hPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/_14sdp"
+                            android:paddingBottom="@dimen/_14sdp"
+                            android:textSize="@dimen/_14ssp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Remember Me -->
+                    <com.google.android.material.checkbox.MaterialCheckBox
+                        android:id="@+id/cbRemember"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="Remember Me"
+                        android:textColor="@color/login_primary"
+                        android:textSize="@dimen/_13ssp"
+                        app:buttonTint="@color/login_primary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tlPassword" />
+
+                    <!-- Login Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLog"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_52sdp"
+                        android:layout_marginTop="@dimen/_14sdp"
+                        android:text="Login"
+                        android:textAllCaps="false"
+                        android:textColor="@color/login_primary"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/login_button_background"
+                        app:cornerRadius="@dimen/_14sdp"
+                        app:elevation="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cbRemember"
+                        app:strokeColor="@color/login_button_stroke"
+                        app:strokeWidth="1dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Copyright -->
+            <TextView
+                android:id="@+id/txtCopyright"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.02"
+                android:text="© 2026 AgriBird. All Rights Reserved"
+                android:textColor="@color/login_footer_primary"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardLogin" />
+
+            <!-- Company Property -->
+            <TextView
+                android:id="@+id/txtProperty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="Property of AgriBird Services Pvt. Ltd."
+                android:textColor="@color/login_footer_secondary"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtCopyright" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="false"-->
+<!--    android:background="#F8F9FA"-->
+<!--    android:fillViewport="true">-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        android:gravity="center_vertical"-->
+<!--        android:paddingHorizontal="24dp"-->
+<!--        android:paddingVertical="32dp">-->
+
+<!--        &lt;!&ndash; 🟢 कंपनी लोगो &ndash;&gt;-->
+<!--        <ImageView-->
+<!--            android:layout_width="220dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:src="@drawable/agri"/>-->
+
+<!--        &lt;!&ndash; स्क्रीनशॉट सारखा 'WELCOME BACK' सब-टायटल &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="WELCOME BACK"-->
+<!--            android:textColor="#2E7D32"-->
+<!--            android:textSize="12sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:letterSpacing="0.1"-->
+<!--            android:fontFamily="sans-serif-medium" />-->
+
+<!--        &lt;!&ndash; मूळ टायटल टेक्स्ट &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="AgriBird HRMS Login"-->
+<!--            android:textColor="#1A1A1A"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:fontFamily="sans-serif-black"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="28dp"/>-->
+
+<!--        &lt;!&ndash; 📑 प्रिमियम कर्व्ह्ड फ्लोटिंग कार्ड (स्क्रीनशॉट सारखं) &ndash;&gt;-->
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="8dp"-->
+<!--            android:layout_marginBottom="24dp"-->
+<!--            app:cardBackgroundColor="#FFFFFF"-->
+<!--            app:cardCornerRadius="36dp"-->
+<!--            app:cardElevation="4dp">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="24dp">-->
+
+<!--                &lt;!&ndash; ईमेल इनपुट कंटेनर (स्क्रीनशॉट सारखा मऊ ग्रे बॅकग्राउंड) &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:background="@drawable/edittext_background"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:paddingHorizontal="16dp">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="✉"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#757575"-->
+<!--                        android:layout_marginEnd="12dp"/>-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/hName"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:hint="Enter Email"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:textColor="#1A1A1A"-->
+<!--                        android:textColorHint="#9E9E9E"-->
+<!--                        android:textSize="15sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; पासवर्ड इनपुट कंटेनर &ndash;&gt;-->
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="56dp"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:background="@drawable/edittext_background"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="16dp"-->
+<!--                    android:paddingHorizontal="16dp">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="🔒"-->
+<!--                        android:textSize="18sp"-->
+<!--                        android:textColor="#757575"-->
+<!--                        android:layout_marginEnd="12dp"/>-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/hPass"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:hint="Enter Password"-->
+<!--                        android:inputType="textPassword"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:textColor="#1A1A1A"-->
+<!--                        android:textColorHint="#9E9E9E"-->
+<!--                        android:textSize="15sp"/>-->
+<!--                </LinearLayout>-->
+
+<!--                &lt;!&ndash; रिमेंबर मी चेकबॉक्स &ndash;&gt;-->
+<!--                <CheckBox-->
+<!--                    android:id="@+id/cbRemember"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Remember Me"-->
+<!--                    android:textColor="#2E7D32"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:layout_marginTop="12dp"-->
+<!--                    android:buttonTint="#2E7D32"/>-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/btnLog"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="54dp"-->
+<!--                    android:text="Login"-->
+<!--                    android:textColor="#2E7D32"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textSize="15sp"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:backgroundTint="#E8F5E9"-->
+<!--                    app:cornerRadius="18dp"-->
+<!--                    app:strokeColor="#C8E6C9"-->
+<!--                    app:strokeWidth="1dp"-->
+<!--                    app:elevation="0dp"/>-->
+
+<!--            </LinearLayout>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginTop="48dp">-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="© 2026 AgriBird.All Rights Reserved"-->
+<!--                android:textSize="12sp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="#829684"-->
+<!--                android:letterSpacing="0.05"-->
+<!--                android:fontFamily="sans-serif-medium"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Property of AgriBird Services Pvt.Ltd"-->
+<!--                android:textSize="11sp"-->
+<!--                android:textColor="#A4B5A6"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:fontFamily="sans-serif-light"/>-->
+<!--        </LinearLayout>-->
+<!--    </LinearLayout>-->
+<!--</ScrollView>-->

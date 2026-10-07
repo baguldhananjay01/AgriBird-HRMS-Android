@@ -1,0 +1,155 @@
+<resources>
+    <string name="app_name">AgriBird HRMS</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string-array name="departments_array">
+        <item>Select Department</item>
+        <item>Management &amp; Admin</item>
+        <item>Sales &amp; Business Development</item>
+        <item>IT &amp; Development</item>
+        <item>Finance &amp; Accounts</item>
+        <item>Human Resources (HR)</item>
+        <item>Operations &amp; Lead Generation</item>
+        <item>Quality Assurance (QA)</item>
+        <item>Data Research &amp; MIS</item>
+        <item>Customer Support (CSR)</item>
+        <item>Logistics &amp; Marketplace</item>
+    </string-array>
+
+    <string-array name="roles_management">
+        <item>Super Administrator</item>
+        <item>Administrator</item>
+        <item>Admin Staff</item>
+        <item>Admin Manager</item>
+    </string-array>
+
+    <string-array name="roles_sales">
+        <item>User</item>
+        <item>Appointment Generation Executive</item>
+        <item>Assistant Sales Executive</item>
+        <item>Assistant Sales Manager</item>
+        <item>Assistant Sales Team Lead</item>
+        <item>Sales Director</item>
+        <item>Agri Advisor</item>
+        <item>Sales Manager</item>
+        <item>Sales Team Lead</item>
+        <item>Senior Sales Executive</item>
+        <item>Senior Sales Manager</item>
+        <item>Senior Sales Team Lead</item>
+    </string-array>
+
+    <string-array name="roles_it">
+        <item>Web Developer</item>
+        <item>PHP Developer</item>
+        <item>Data Scientist</item>
+        <item>Desktop Support Engineer</item>
+        <item>IT Engineer</item>
+        <item>IT Manager</item>
+        <item>IT Director</item>
+    </string-array>
+
+    <string-array name="roles_finance">
+        <item>Finance Executive</item>
+        <item>Finance Manager</item>
+        <item>Finance Director</item>
+        <item>Accounts Executive</item>
+        <item>Accounts Manager</item>
+        <item>Accounts Director</item>
+    </string-array>
+
+    <string-array name="roles_hr">
+        <item>HR Executive</item>
+        <item>HR Manager</item>
+        <item>HR Director</item>
+    </string-array>
+
+    <string-array name="roles_operations">
+        <item>Demand Generation Executive</item>
+        <item>Assistant Operations Manager</item>
+        <item>Assistant Operations Team Lead</item>
+        <item>Operations Director</item>
+        <item>Lead Generation Executive</item>
+        <item>Operations Manager</item>
+        <item>Operations Team Lead</item>
+        <item>Senior Lead Generation Executive</item>
+        <item>Senior Operations Manager</item>
+        <item>Senior Operations Team Lead</item>
+        <item>Senior Demand Generation Executive</item>
+    </string-array>
+
+    <string-array name="roles_quality">
+        <item>Assistant Quality Manager</item>
+        <item>Assistant Quality Team Lead</item>
+        <item>Quality Director</item>
+        <item>Quality Analyst</item>
+        <item>Quality Manager</item>
+        <item>Quality Team Lead</item>
+        <item>Senior Quality Analyst</item>
+        <item>Senior Quality Manager</item>
+        <item>Senior Quality Team Lead</item>
+    </string-array>
+
+    <string-array name="roles_data_mis">
+        <item>Assistant Data Research Manager</item>
+        <item>Assistant Data Research Team Lead</item>
+        <item>Data Research Analyst</item>
+        <item>Data Research Manager</item>
+        <item>Data Research Team Lead</item>
+        <item>Senior Data Research Analyst</item>
+        <item>Senior Data Research Manager</item>
+        <item>Senior Data Research Team Lead</item>
+        <item>Assistant Digital Marketing Manager</item>
+        <item>Assistant Digital Marketing Team Lead</item>
+        <item>Digital Marketing Executive</item>
+        <item>Digital Marketing Manager</item>
+        <item>Digital Marketing Director</item>
+        <item>Digital Marketing Team Lead</item>
+        <item>Senior Digital Marketing Executive</item>
+        <item>Senior Digital Marketing Manager</item>
+        <item>Senior Digital Marketing Team Lead</item>
+        <item>Assistant MIS Manager</item>
+        <item>Assistant MIS Team Lead</item>
+        <item>MIS Executive</item>
+        <item>MIS Manager</item>
+        <item>MIS Team Lead</item>
+        <item>Senior MIS Executive</item>
+        <item>Senior MIS Manager</item>
+        <item>Senior MIS Team Lead</item>
+    </string-array>
+
+    <string-array name="roles_csr">
+        <item>CSR Executive</item>
+        <item>CSR Team Lead</item>
+        <item>CSR Manager</item>
+    </string-array>
+
+    <string-array name="roles_logistics">
+        <item>seller</item>
+        <item>delivery_partner</item>
+    </string-array>
+
+    <string-array name="leave_types">
+        <item>Casual Leave</item>
+        <item>Sick Leave</item>
+        <item>Emergency Leave</item>
+        <item>Paid Leave</item>
+    </string-array>
+
+    <string-array name="blood_groups_array">
+        <item>Select Blood Group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
