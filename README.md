@@ -119,3 +119,99 @@ AgriBirdHRMS/
 ├── gradlew.bat
 ├── settings.gradle
 └── README.md
+```
+
+---
+
+# 📸 Screenshots
+
+## 🌱 Splash Screen
+
+![Splash Screen](screenshots/splash-screen.jpeg)
+
+---
+
+## 🔐 Login Screen
+
+![Login Screen](screenshots/login.jpeg)
+
+---
+
+## 🏠 Home Dashboard
+
+![Home Dashboard](screenshots/home-dashboard.jpeg)
+
+---
+
+## ⏱️ Attendance
+
+![Attendance](screenshots/attendance.jpeg)
+
+---
+
+## 🏖️ Apply Leave
+
+![Apply Leave](screenshots/apply-leave.jpeg)
+
+---
+
+## 👤 Employee Profile
+
+![Employee Profile](screenshots/profile.jpeg)
+
+---
+
+## 🔌 Backend Integration
+
+The Android application communicates with a REST API backend for employee and HR-related operations.
+
+The Android application uses **Retrofit** for communication with the REST API.
+
+> Backend REST API will be maintained in a separate repository.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Android Studio
+- Android SDK
+- JDK
+- Android Device or Emulator
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/baguldhananjay01/AgriBird-HRMS-Android.git
+```
+
+Open the project in **Android Studio**.
+
+Allow Gradle to sync completely.
+
+Connect an Android device or start an Android Emulator.
+
+Run the application.
+
+---
+
+## 👨‍💻 Developer
+
+**Dhananjay Bagul**
+
+Android & Java Developer
+
+---
+
+## 📄 License
+
+This project is developed for educational and professional project purposes.
+
+---
+
+### 🌱 AgriBird HRMS
+
+**Simplifying Employee Management Through Technology.**
